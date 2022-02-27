@@ -1,0 +1,54 @@
+extends ../PublicViews/public
+block admin
+ html
+  head  
+  body
+    .mws-panel.grid_8
+      .mws-panel-header
+        span 后台商家食品修改 
+      .mws-panel-body.no-padding
+        form.mws-form(action='/admingoodslistdoedit' method="post" enctype="multipart/form-data")
+          .mws-form-inline
+            .mws-form-row
+              label.mws-form-label 食品名
+              .mws-form-item
+                input.large(type='text' name="foodname" value="#{data.foodname}") 
+            .mws-form-row
+              label.mws-form-label 食品图片
+              .mws-form-item
+                img(src="https://yulinerqi.oss-cn-beijing.aliyuncs.com/#{data.foodpic}",alt="" width="100px" height="100px")
+            .mws-form-row
+              label.mws-form-label 上传图片
+              .mws-form-item
+                input.large(type='file' name="foodpic" )
+            .mws-form-row
+              label.mws-form-label 单价
+              .mws-form-item
+                input.large(type='text' name="price" value="#{data.price}")
+            .mws-form-row
+              label.mws-form-label 描述
+              .mws-form-item
+                input.large(type='text' name="descr" value="#{data.descr}") 
+            .mws-form-row
+              label.mws-form-label 所属商家
+              .mws-form-item
+                select.large(name="shoplist_id")
+                  option(value="#{data.shoplist_id}") #{sname.sname}
+                  -for(let i=0;i<shoplist.length;i++){
+                  option(value="#{shoplist[i].id}") #{shoplist[i].name} 
+                  -}
+                  //- option --请选择--
+                  //- -for(let i=0;i<shoplist.length;i++){
+                  //- -if(shoplist[i].id == data.shoplist_id){
+                  //- option(value="#{shoplist[i].id}" selected='selected') #{shoplist[i].name} 
+                  //- -}
+                  //- -else{
+                  //- option(value="#{shoplist[i].id}") #{shoplist[i].name} 
+                  //- -}
+                  //- -} 
+          .mws-button-row
+            input(type="hidden" name="id" value="#{data.id}")
+            input.btn.btn-danger(type='submit' value='食品修改')
+            input.btn(type='reset' value='Reset')
+block title 
+    | 后台商家食品修改

@@ -1,0 +1,31 @@
+extends ../PublicViews/public
+block admin 
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 入驻商家添加
+  .mws-panel-body.no-padding
+    form.mws-form(action='/adminshopdoadd' method="post" enctype="multipart/form-data")
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 商家名称
+          .mws-form-item
+            input.large(type='text' name="name")
+        .mws-form-row
+          label.mws-form-label 商家图片
+          .mws-form-item
+            input.large(type='file' name="pic")
+        .mws-form-row
+          label.mws-form-label 商家描述
+          .mws-form-item
+            input.large(type='text' name="content")
+        .mws-form-row
+          label.mws-form-label 商家配送费
+          .mws-form-item
+            input.large(type='text' name="fee")
+      .mws-button-row
+        input.btn.btn-danger(type='submit' value='商家添加')
+        input.btn(type='reset' value='Reset')
+
+     
+block title 
+    | 后台入驻商家添加

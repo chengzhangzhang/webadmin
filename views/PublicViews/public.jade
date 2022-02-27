@@ -1,0 +1,153 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    // Viewport Metatag
+    meta(name='viewport' content='width=device-width,initial-scale=1.0')
+    // Plugin Stylesheets first to ease overrides
+    link(rel='stylesheet' type='text/css' href='/admin/plugins/colorpicker/colorpicker.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/custom-plugins/wizard/wizard.css' media='screen')
+    // Required Stylesheets
+    link(rel='stylesheet' type='text/css' href='/admin/bootstrap/css/bootstrap.min.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/fonts/ptsans/stylesheet.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/fonts/icomoon/style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/mws-style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/icons/icol16.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/icons/icol32.css' media='screen')
+    // Demo Stylesheet
+    link(rel='stylesheet' type='text/css' href='/admin/css/demo.css' media='screen')
+    // jQuery-UI Stylesheet
+    link(rel='stylesheet' type='text/css' href='/admin/jui/css/jquery.ui.all.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/jui/jquery-ui.custom.css' media='screen')
+    // Theme Stylesheet
+    link(rel='stylesheet' type='text/css' href='/admin/css/mws-theme.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/themer.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/my.css' media='screen')
+    title 
+        block title 
+  body
+    // Header
+    #mws-header.clearfix
+      // Logo Container
+      #mws-logo-container
+        // Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+            a(href="/adminindex")
+              //- h2 外卖后台
+              img(src="/admin/images/logo3.png")
+                
+      // User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        // Notifications
+        // Messages
+        // User Information and functions section
+        #mws-user-info.mws-inset
+          // User Photo
+          #mws-user-photo
+            img(src='/admin/example/tx.jpg' alt='User Photo')
+          // Username and Functions
+          #mws-user-functions
+            #mws-username
+              | 您好, #{loginnames}
+            ul
+              li
+                a(href='/logout') 退出
+    // Start Main Wrapper
+    #mws-wrapper
+      // Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      // Sidebar Wrapper
+      #mws-sidebar
+        // Hidden Nav Collapse Button
+        #mws-nav-collapse
+          span
+          span
+          span
+        //- // Searchbox
+        //- #mws-searchbox.mws-inset
+        //-   form(action='typography.html')
+        //-     input.mws-search-input(type='text' placeholder='Search...')
+        //-     button.mws-search-submit(type='submit')
+        //-       i.icon-search
+        // Main Navigation
+        #mws-navigation
+          ul
+            li
+              a(href='#')
+                i.icon-add-contact
+                |  管理员管理
+              ul.closed
+                li
+                  a(href='/adminuseradd') 管理员添加
+                li
+                  a(href='/adminuser') 管理员列表
+            li
+              a(href='#')
+                i.icon-users
+                |  会员用户管理
+              ul.closed
+                li
+                  a(href='/user') 会员用户列表
+            li
+              a(href='#')
+                i.icon-database
+                |  入驻商家管理
+              ul.closed
+                li
+                  a(href='adminshopadd') 商家添加
+                li
+                  a(href='/adminshop') 商家列表
+            li
+              a(href='#')
+                i.icon-coffee-2
+                |  商家食品管理
+              ul.closed
+                li
+                  a(href='/adminfoodsadd') 食品添加
+                li
+                  a(href='/adminfoods') 食品列表
+            li
+              a(href='#')
+                i.icon-plane
+                |  会员订单管理
+              ul.closed
+                li
+                  a(href='/adminorders') 会员订单列表
+      // Main Container Start
+      #mws-container.clearfix
+        .container
+          block admin 
+          // Panels End
+          // footer
+          #mws-footer
+            | 榆林web开发组
+      // Main Container End
+      // JavaScript Plugins
+      script(src='/admin/js/libs/jquery-1.8.3.min.js')
+      script(src='/admin/js/libs/jquery.mousewheel.min.js')
+      script(src='/admin/js/libs/jquery.placeholder.min.js')
+      script(src='/admin/custom-plugins/fileinput.js')
+      // jQuery-UI Dependent Scripts
+      script(src='/admin/jui/js/jquery-ui-1.9.2.min.js')
+      script(src='/admin/jui/jquery-ui.custom.min.js')
+      script(src='/admin/jui/js/jquery.ui.touch-punch.js')
+      // Plugin Scripts
+      script(src='/admin/plugins/datatables/jquery.dataTables.min.js')
+      //if lt IE 9
+        script(src='js/libs/excanvas.min.js')
+      script(src='/admin/plugins/flot/jquery.flot.min.js')
+      script(src='/admin/plugins/flot/plugins/jquery.flot.tooltip.min.js')
+      script(src='/admin/plugins/flot/plugins/jquery.flot.pie.min.js')
+      script(src='/admin/plugins/flot/plugins/jquery.flot.stack.min.js')
+      script(src='/admin/plugins/flot/plugins/jquery.flot.resize.min.js')
+      script(src='/admin/plugins/colorpicker/colorpicker-min.js')
+      script(src='/admin/plugins/validate/jquery.validate-min.js')
+      script(src='/admin/custom-plugins/wizard/wizard.min.js')
+      // Core Script
+      script(src='/admin/bootstrap/js/bootstrap.min.js')
+      script(src='/admin/js/core/mws.js')
+      // Themer Script (Remove if not needed)
+      script(src='/admin/js/core/themer.js')
+      // Demo Scripts (remove if not needed)
+      script(src='/admin/js/demo/demo.dashboard.js')

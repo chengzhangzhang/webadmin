@@ -1,0 +1,24 @@
+{
+  "name": "04waimainode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ali-oss": "^6.16.0",
+    "body-parser": "^1.19.1",
+    "co": "^4.6.0",
+    "echarts": "^5.2.2",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "formidable": "^1.2.2",
+    "jade": "^1.11.0",
+    "jquery": "^3.6.0",
+    "mysql": "^2.18.1"
+  }
+}

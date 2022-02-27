@@ -1,0 +1,24 @@
+extends ../PublicViews/public
+block admin 
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 管理员修改
+  .mws-panel-body.no-padding
+    form.mws-form(action='/adminuserdoedit' method="post")
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 管理员姓名
+          .mws-form-item
+            input.large(type='text' name="name" value="#{data.name}")
+        .mws-form-row
+          label.mws-form-label 管理员密码
+          .mws-form-item
+            input.large(type='password' name="password" value="#{data.password}")
+      .mws-button-row
+        input(type="hidden",name="id" value="#{data.id}")
+        input.btn.btn-danger(type='submit' value='修改')
+        input.btn(type='reset' value='Reset')
+
+     
+block title 
+    | 后台管理员添加

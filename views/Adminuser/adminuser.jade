@@ -1,0 +1,28 @@
+extends ../PublicViews/public
+block admin 
+ .mws-panel.grid_8
+  .mws-panel-header
+    span
+      i.icon-table
+      |  管理员列表
+  .mws-panel-body.no-padding
+    #DataTables_Table_1_wrapper.dataTables_wrapper(role='grid')
+
+      table#DataTables_Table_1.mws-datatable-fn.mws-table.dataTable(aria-describedby='DataTables_Table_1_info')
+        thead
+          tr(role='row')
+            th.sorting_asc(role='columnheader' tabindex='0' aria-controls='DataTables_Table_1' rowspan='1' colspan='1' aria-sort='ascending' aria-label='Rendering engine: activate to sort column descending' style='width: 189px;') 序号
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_1' rowspan='1' colspan='1' aria-label='Browser: activate to sort column ascending' style='width: 247px;') 管理员姓名
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_1' rowspan='1' colspan='1' aria-label='Platform(s): activate to sort column ascending' style='width: 227px;') 管理员密码
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_1' rowspan='1' colspan='1' aria-label='Engine version: activate to sort column ascending' style='width: 164px;') 操作
+        tbody(role='alert' aria-live='polite' aria-relevant='all')
+        -for(var i=0;i<data.length;i++)
+          tr.odd
+            td.sorting_1 #{data[i].id}
+            td.Firefox #{data[i].name}
+            td.Win #{data[i].password}
+            td 
+              a(href="/adminuserdel?id=#{data[i].id}" class="btn btn-success") 删除
+              a(href="/adminuseredit?id=#{data[i].id}" class="btn btn-danger") 修改
+block title 
+    | 后台管理员管理

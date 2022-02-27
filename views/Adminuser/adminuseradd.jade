@@ -1,0 +1,23 @@
+extends ../PublicViews/public
+block admin 
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 管理员添加
+  .mws-panel-body.no-padding
+    form.mws-form(action='/adminuserdoadd' method="post")
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 管理员姓名
+          .mws-form-item
+            input.large(type='text' name="name")
+        .mws-form-row
+          label.mws-form-label 管理员密码
+          .mws-form-item
+            input.large(type='password' name="password")
+      .mws-button-row
+        input.btn.btn-danger(type='submit' value='添加')
+        input.btn(type='reset' value='Reset')
+
+     
+block title 
+    | 后台管理员添加

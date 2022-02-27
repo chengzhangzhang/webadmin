@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    // Viewport Metatag
+    meta(name='viewport' content='width=device-width,initial-scale=1.0')
+    // Required Stylesheets
+    link(rel='stylesheet' type='text/css' href='/admin/bootstrap/css/bootstrap.min.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/fonts/ptsans/stylesheet.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/fonts/icomoon/style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/login.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/admin/css/mws-theme.css' media='screen')
+    title 后台登录
+  body 
+    #mws-login-wrapper
+      #mws-login
+        h1 用户名不正确
+    // JavaScript Plugins
+    script(src='/admin/js/libs/jquery-1.8.3.min.js')
+    script(src='/admin/js/libs/jquery.placeholder.min.js')
+    script(src='/admin/custom-plugins/fileinput.js')
+    // jQuery-UI Dependent Scripts
+    script(src='/admin/jui/js/jquery-ui-effects.min.js')
+    // Plugin Scripts
+    script(src='/admin/plugins/validate/jquery.validate-min.js')
+    // Login Script
+    script(src='/admin/js/core/login.js')
+    <script>setTimeout(function(){location.href='/login'},1000)</script>

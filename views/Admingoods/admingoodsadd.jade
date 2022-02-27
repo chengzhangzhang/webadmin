@@ -1,0 +1,39 @@
+extends ../PublicViews/public
+block admin 
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 商家食品添加
+  .mws-panel-body.no-padding
+    form.mws-form(action='/admingoodsdoadd' method="post" enctype="multipart/form-data")
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 食品名称
+          .mws-form-item
+            input.large(type='text' name="foodname")
+        .mws-form-row
+          label.mws-form-label 食品图片
+          .mws-form-item
+            input.large(type='file' name="foodpic")
+        .mws-form-row
+          label.mws-form-label 食品描述
+          .mws-form-item
+            input.large(type='text' name="descr")
+        .mws-form-row
+          label.mws-form-label 食品单价
+          .mws-form-item
+            input.large(type='text' name="price")
+        .mws-form-row
+          label.mws-form-label 所属商家
+          .mws-form-item
+            select.large(name="shoplist_id")
+              option --请选择--
+              -for(let i=0;i<data.length;i++){
+              option(value="#{data[i].id}") #{data[i].name} 
+              -}
+      .mws-button-row
+        input.btn.btn-danger(type='submit' value='食品添加')
+        input.btn(type='reset' value='Reset')
+
+     
+block title 
+    | 后台商家食品添加
