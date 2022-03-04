@@ -351,11 +351,11 @@ var client = new OSS({
 
     region: 'oss-cn-beijing',//地域
 
-    accessKeyId: 'LTAI5tBGesqnzSKz89cEPFsk',//keyid
+    accessKeyId: '',//keyid
 
-    accessKeySecret: 'NiGMiuU6Qe0xnvKmnSTUuyvyeOc7Yg',//密钥
+    accessKeySecret: '',//密钥
 
-    bucket: 'yulinerqi'//仓库名字
+    bucket: ''//仓库名字
 
 });
 
